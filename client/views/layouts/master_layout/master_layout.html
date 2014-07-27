@@ -1,159 +1,371 @@
 <template name="MasterLayout">
-  {{> yield}}
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="shortcut icon" href="resources/images/favicon.ico">
-		<title>Bohase Shop</title>
+	<header class="header-style-1">
+		{{> topMenu}}
+		{{> navBar}}
+	</header>
+	<div class="body-container">
+		<div class="container">
+		 	<div id='fodasse' style="height: 200px"></div>
+		</div>
+	</div>
+	<footer>
+		{{> footer}}
+	</footer>
+</template>
 
-		<!-- Bootstrap core CSS -->
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-		<!-- Customizable CSS -->
-		<link href="assets/css/owl.carousel.css" rel="stylesheet">
-		<link href="assets/css/owl.transitions.css" rel="stylesheet">
-		<link href="assets/css/rateit.css" rel="stylesheet">
-		<link href="assets/css/jquery.bxslider.css" rel="stylesheet">
-		<link href="assets/css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
-		<link href="assets/css/lightbox.css" rel="stylesheet">
-		<link href="assets/css/animate.min.css" rel="stylesheet">
-		
-		<!-- Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100' rel='stylesheet' type='text/css'>
-
-		<!-- Icons/Glyphs -->
-		<link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
-		<!-- Main CSS -->
-		<link href="assets/css/main.css" rel="stylesheet">
-
-		<!-- Default Preset Color -->
-		<link href="assets/css/blue.css" rel="stylesheet">
-
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
-
-		<!-- Demo Purpose Only. Should be removed in production -->
-		<link rel="stylesheet" href="assets/css/config.css">
-
-		<link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
-		<link href="assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
-		<link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
-		<link href="assets/css/navy.css" rel="alternate stylesheet" title="Navy color">
-		<link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
-		<!-- Demo Purpose Only. Should be removed in production : END -->
-		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body class="cnt-home">
-
-		<!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1">
-	
-	<!-- ============================================== TOP MENU ============================================== -->
-<div class="header-top animate-dropdown">
+<template name="footer">
+	<!-- ============================================== BRANDS CAROUSEL ============================================== -->
+<div id="brands-carousel" class="logo-slider wow fadeInUp ">
 	<div class="container">
-		<div class="header-top-inner">
-			<div class="cnt-account">
-				<ul class="list-unstyled list-inline">
-					<li><a href="#">My Account</a></li>
-					<li><a href="#">Wishlist</a></li>
-					<li><a href="#">My Cart</a></li>
-					<li><a href="#">Checkout</a></li>
-					<li><a href="#">Login</a></li>
-				</ul>
-			</div><!-- /.cnt-account -->
+		<div class="logo-slider-inner">	
+			<div id="logo-slider" class="owl-carousel owl-theme">
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-activeden.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
 
-			<div class="cnt-cart">
-				<ul class="list-unstyled list-inline">
-					<li class="dropdown dropdown-small">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">English</a></li>
-							<li><a href="#">French</a></li>
-							<li><a href="#">German</a></li>
-						</ul>
-					</li>
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-codecanyon.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
 
-					<li class="dropdown dropdown-small">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">USD <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">USD</a></li>
-							<li><a href="#">INR</a></li>
-							<li><a href="#">GBP</a></li>
-						</ul>
-					</li>
-					<li class="dropdown dropdown-cart">
-						<a href="#" class="dropdown-toggle lnk-cart btn btn-blue btn-small" data-toggle="dropdown"><i class="glyphicon glyphicon-shopping-cart"></i>Cart 02</a>
-						<ul class="dropdown-menu">
-														<li>
-								<div class="cart-item product-summary">
-									<div class="row">
-										<div class="col-xs-4">
-											<div class="image">
-												<img src="assets/images/products-3/1.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-xs-7">
-											<a href="#"><h3 class="name">Habace Dress Style</h3></a>
-											<div class="rating rateit-small"></div>
-											<div class="price">$360.00</div>
-										</div>
-										<div class="col-xs-1 action">
-											<a href="#"><i class="glyphicon glyphicon-remove"></i></a>
-										</div>
-									</div>
-								</div><!-- /.cart-item -->
-								<div class="clearfix"></div>
-							</li>
-														<li>
-								<div class="cart-item product-summary">
-									<div class="row">
-										<div class="col-xs-4">
-											<div class="image">
-												<img src="assets/images/products-3/2.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-xs-7">
-											<a href="#"><h3 class="name">Habace Dress Style</h3></a>
-											<div class="rating rateit-small"></div>
-											<div class="price">$360.00</div>
-										</div>
-										<div class="col-xs-1 action">
-											<a href="#"><i class="glyphicon glyphicon-remove"></i></a>
-										</div>
-									</div>
-								</div><!-- /.cart-item -->
-								<div class="clearfix"></div>
-							</li>
-														<li class="cart-total">
-								<div class="pull-left">
-									<div class="text">Total</div>
-									<div class="price">$360</div>
-								</div>	
-								<div class="pull-right">
-									<a href="checkout.html" class="btn btn-upper btn-blue btn-normal">Checkout</a>	
-								</div>	
-								<div class="clearfix"></div>
-							</li>
-						</ul><!-- /.dropdown-menu-->
-						<div class="clearfix"></div>
-					</li><!-- /.dropdown-cart -->
-				</ul><!-- /.list-unstyled -->
-			</div><!-- /.cnt-cart -->
-			<div class="clearfix"></div>
-		</div><!-- /.header-top-inner -->
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-logo-audiojungle.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-themeforest.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-videohive.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-activeden.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-codecanyon.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-logo-audiojungle.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-themeforest.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+
+				<div class="item">
+					<a href="#" class="image">
+						<img data-echo="assets/images/brands/slide-log-videohive.png" src="assets/images/blank.gif" alt="">
+					</a>	
+				</div><!--/.item-->
+		    </div><!-- /.owl-carousel #logo-slider -->
+		</div><!-- /.logo-slider-inner -->
+	</div>
+</div><!-- /.logo-slider -->
+<!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	
+	<!-- ============================================== INFO BOXES ============================================== -->
+<div class="info-boxes wow fadeInUp">
+	<div class="container">
+		<div class="info-boxes-inner">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="info-box">
+						<div class="row">
+							<div class="col-xs-2">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-truck fa-stack-1x fa-inverse"></i>
+								</span>
+							</div>
+							<div class="col-xs-10">
+								<h4>FREE DELIVERY</h4>
+								<h6>Free Delivry On Oder Over $680.00</h6>
+							</div>
+						</div>	
+					</div>
+				</div><!-- .col -->
+
+				<div class="col-md-3">
+					<div class="info-box">
+						<div class="row">
+							<div class="col-xs-2">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-money fa-stack-1x fa-inverse"></i>
+								</span>
+							</div>
+							<div class="col-xs-10">
+								<h4>100% Money back</h4>
+								<h6>30 Day Money Back Guarantee.</h6>
+							</div>
+						</div>	
+					</div>
+				</div><!-- .col -->
+
+				<div class="col-md-3">
+					<div class="info-box">
+						<div class="row">
+							<div class="col-xs-2">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+								</span>
+							</div>
+							<div class="col-xs-10">
+								<h4>CALL TO ORDER</h4>
+								<h6>Call Phone: 84. 868 868 / 868 888</h6>
+							</div>
+						</div>	
+					</div>
+				</div><!-- .col -->
+
+				<div class="col-md-3">
+					<div class="info-box">
+						<div class="row">
+							<div class="col-xs-2">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-comments fa-stack-1x fa-inverse"></i>
+								</span>
+							</div>
+							<div class="col-xs-10">
+								<h4>online support</h4>
+								<a href="#"><h6>Click Here to Chat With Us!</h6></a>
+							</div>
+						</div>
+					</div>
+				</div><!-- .col -->
+			</div><!-- /.row -->
+		</div><!-- /.info-boxes-inner -->
 	</div><!-- /.container -->
-</div><!-- /.header-top -->
-<!-- ============================================== TOP MENU : END ============================================== -->
-	<!-- ============================================== NAVBAR ============================================== -->
+</div><!-- /.info-boxes -->
+<!-- ============================================== INFO BOXES : END ============================================== -->	
+	<div class="links-social">
+		<div class="container-class container">
+			<div class="links-social-inner">
+				<div class="row">
+					<div class="col-md-8">
+						<!-- ============================================== LINK GROUPS ============================================== -->
+<div class="link-groups">
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="links">
+				<h3 class="title">ABOUT US</h3>
+				<ul>
+					<li><a href="#">Fixies</a></li>
+					<li><a href="#">City Bikes</a></li>
+					<li><a href="#">Glow</a></li>
+					<li><a href="#">Wheelsets</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Sale</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Shop by Size</a></li>
+				</ul>
+			</div>
+		</div><!-- /.col -->
+
+		<div class="col-sm-3">
+			<div class="links">
+				<h3 class="title">MY ACCOUNT</h3>
+				<ul>
+					<li><a href="#">Fixies</a></li>
+					<li><a href="#">City Bikes</a></li>
+					<li><a href="#">Glow</a></li>
+					<li><a href="#">Wheelsets</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Sale</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Shop by Size</a></li>
+				</ul>
+			</div>
+		</div><!-- /.col -->
+
+		<div class="col-sm-3">
+			<div class="links">
+				<h3 class="title">INFORMATION</h3>
+				<ul>
+					<li><a href="#">Fixies</a></li>
+					<li><a href="#">City Bikes</a></li>
+					<li><a href="#">Glow</a></li>
+					<li><a href="#">Wheelsets</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Sale</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Shop by Size</a></li>
+				</ul>
+			</div>
+		</div><!-- /.col -->
+
+		<div class="col-sm-3">
+			<div class="links">
+				<h3 class="title">SHOP</h3>
+				<ul>
+					<li><a href="#">Fixies</a></li>
+					<li><a href="#">City Bikes</a></li>
+					<li><a href="#">Glow</a></li>
+					<li><a href="#">Wheelsets</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Sale</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Shop by Size</a></li>
+				</ul>
+			</div>
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</div><!-- /.link-groups -->
+<!-- ============================================== LINK GROUPS : END ============================================== -->					</div><!-- /.col -->
+
+					<div class="col-md-4">
+						<!-- ============================================== SOCIAL-NEWSLETTER ============================================== -->
+<div class="social-newsletter">
+	<div class="social-links">
+		<h3 class="title">CONNECT WITH US</h3>
+		<ul class="social list-inline list-unstyled">
+			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+			<li><a href="#"><i class="fa fa-rss"></i></a></li>
+			<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+		</ul>
+	</div><!-- /.social-links -->
+
+	<div class="newsletter">
+		<h3 class="title">GET NEWSLETTER</h3>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Email Address">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button">Subscribe</button>
+			</span>
+		</div>
+	</div><!-- /.newsletter -->
+</div><!-- /.social-newsletter -->
+<!-- ============================================== SOCIAL-NEWSLETTER : END ============================================== -->					</div><!-- /.col-md-4 -->
+				</div><!-- /.row -->
+			</div><!-- /.links-social-inner-->
+		</div><!-- /.container -->
+	</div><!-- /.links-social -->
+
+	<div class="copyright">&copy; <a href="#">LEEBROSUS</a> | ALL RIGHTS RESERVED.</div>
+</template>
+
+<template name="topMenu">
+	<div class="header-top animate-dropdown">
+		<div class="container">
+			<div class="header-top-inner">
+				<div class="cnt-account">
+					<ul class="list-unstyled list-inline">
+						<li><a href="#">My Account</a></li>
+						<li><a href="#">Wishlist</a></li>
+						<li><a href="#">My Cart</a></li>
+						<li><a href="#">Checkout</a></li>
+						<li><a href="#">Login</a></li>
+					</ul>
+				</div><!-- /.cnt-account -->
+
+				<div class="cnt-cart">
+					<ul class="list-unstyled list-inline">
+						<li class="dropdown dropdown-small">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">English</a></li>
+								<li><a href="#">French</a></li>
+								<li><a href="#">German</a></li>
+							</ul>
+						</li>
+
+						<li class="dropdown dropdown-small">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">USD <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">USD</a></li>
+								<li><a href="#">INR</a></li>
+								<li><a href="#">GBP</a></li>
+							</ul>
+						</li>
+						<li class="dropdown dropdown-cart">
+							<a href="#" class="dropdown-toggle lnk-cart btn btn-blue btn-small" data-toggle="dropdown"><i class="glyphicon glyphicon-shopping-cart"></i>Cart 02</a>
+							<ul class="dropdown-menu">
+								<li>
+									<div class="cart-item product-summary">
+										<div class="row">
+											<div class="col-xs-4">
+												<div class="image">
+													<img src="assets/images/products-3/1.jpg" alt="">
+												</div>
+											</div>
+											<div class="col-xs-7">
+												<a href="#"><h3 class="name">Habace Dress Style</h3></a>
+												<div class="rating rateit-small"></div>
+												<div class="price">$360.00</div>
+											</div>
+											<div class="col-xs-1 action">
+												<a href="#"><i class="glyphicon glyphicon-remove"></i></a>
+											</div>
+										</div>
+									</div><!-- /.cart-item -->
+									<div class="clearfix"></div>
+								</li>
+								<li>
+									<div class="cart-item product-summary">
+										<div class="row">
+											<div class="col-xs-4">
+												<div class="image">
+													<img src="assets/images/products-3/2.jpg" alt="">
+												</div>
+											</div>
+											<div class="col-xs-7">
+												<a href="#"><h3 class="name">Habace Dress Style</h3></a>
+												<div class="rating rateit-small"></div>
+												<div class="price">$360.00</div>
+											</div>
+											<div class="col-xs-1 action">
+												<a href="#"><i class="glyphicon glyphicon-remove"></i></a>
+											</div>
+										</div>
+									</div><!-- /.cart-item -->
+									<div class="clearfix"></div>
+								</li>
+								<li class="cart-total">
+									<div class="pull-left">
+										<div class="text">Total</div>
+										<div class="price">$360</div>
+									</div>	
+									<div class="pull-right">
+										<a href="checkout.html" class="btn btn-upper btn-blue btn-normal">Checkout</a>	
+									</div>	
+									<div class="clearfix"></div>
+								</li>
+							</ul><!-- /.dropdown-menu-->
+							<div class="clearfix"></div>
+						</li><!-- /.dropdown-cart -->
+					</ul><!-- /.list-unstyled -->
+				</div><!-- /.cnt-cart -->
+				<div class="clearfix"></div>
+			</div><!-- /.header-top-inner -->
+		</div><!-- /.container -->
+	</div>
+</template>
+
+<template name="navBar">
 <div class="header-nav animate-dropdown home">
 	<div class="yamm navbar navbar-default" role="navigation">
 		<div class="container-class container">
@@ -571,1505 +783,6 @@
 		</div><!-- /.container-class -->
 	</div><!-- /.navbar-default -->
 </div><!-- /.header-nav -->
-<!-- ============================================== NAVBAR : END ============================================== -->
-</header>
-
-<!-- ============================================== HEADER : END ============================================== --><div class="body-container">
-	<div class="wide-slider">
-	    <div id="wide-slider" class="owl-carousel owl-theme">
-    		 
-				<div class="item">
-										<img class="lazyOwl" data-src="assets/images/slider-images/1.jpg" src="assets/images/blank.gif" alt="Fashion Show 2016">
-					<div class="content caption">
-						<div class="container">
-							<h3 class="small fadeInDown-1">Fashion show 2016</h3>
-							<h2 class="large fadeInDown-2">new trend this summer!</h2>
-							<h4 class="med fadeInDown-3">Quisque luctus ullamcorper luctus.</h4>
-							<a href="#" class="fadeInDown-3 btn btn-med btn-blue btn-trans btn-upper">shop now</a>
-						</div>	
-					</div>
-				</div>
-			 
-				<div class="item">
-										<img class="lazyOwl" data-src="assets/images/slider-images/2.jpg" src="assets/images/blank.gif" alt="Fashion Show 2016">
-					<div class="content caption">
-						<div class="container">
-							<h3 class="small fadeInDown-1">Fashion show 2016</h3>
-							<h2 class="large fadeInDown-2">new trend this summer!</h2>
-							<h4 class="med fadeInDown-3">Quisque luctus ullamcorper luctus.</h4>
-							<a href="#" class="fadeInDown-3 btn btn-med btn-blue btn-trans btn-upper">shop now</a>
-						</div>	
-					</div>
-				</div>
-			 
-				<div class="item">
-										<img class="lazyOwl" data-src="assets/images/slider-images/3.jpg" src="assets/images/blank.gif" alt="Fashion Show 2016">
-					<div class="content caption">
-						<div class="container">
-							<h3 class="small fadeInDown-1">Fashion show 2016</h3>
-							<h2 class="large fadeInDown-2">new trend this summer!</h2>
-							<h4 class="med fadeInDown-3">Quisque luctus ullamcorper luctus.</h4>
-							<a href="#" class="fadeInDown-3 btn btn-med btn-blue btn-trans btn-upper">shop now</a>
-						</div>	
-					</div>
-				</div>
-			 
-				<div class="item">
-										<img class="lazyOwl" data-src="assets/images/slider-images/4.jpg" src="assets/images/blank.gif" alt="Fashion Show 2016">
-					<div class="content caption">
-						<div class="container">
-							<h3 class="small fadeInDown-1">Fashion show 2016</h3>
-							<h2 class="large fadeInDown-2">new trend this summer!</h2>
-							<h4 class="med fadeInDown-3">Quisque luctus ullamcorper luctus.</h4>
-							<a href="#" class="fadeInDown-3 btn btn-med btn-blue btn-trans btn-upper">shop now</a>
-						</div>	
-					</div>
-				</div>
-				
-	    </div>
-	</div><!-- /.wide-slider -->
-
-	<div class="container">		
-		<div class="wide-banners wow fadeInUp">
-	<div class="row">
-
-		<div class="col-md-6">
-			<div class="wide-banner cnt-strip">
-				<div class="image">
-					<img data-echo="assets/images/banners/2.jpg" src="assets/images/blank.gif" alt="">
-				</div>	
-				<div class="strip">
-					<h6>2016 NEW FASHION SHOW</h6>
-					<h3>WOMEN’S FALL / WINTER</h3>
-				</div>
-			</div><!-- /.wide-banner-->
-		</div><!-- /.col -->
-
-		<div class="col-md-3">
-			<div class="wide-banner cnt-strip">
-				<div class="image">
-					<img data-echo="assets/images/banners/3.jpg" src="assets/images/blank.gif" alt="">
-				</div>	
-				<div class="strip">
-					<div class="strip-inner">
-						<h5>Fashion 2016</h5>
-						<h3>For women</h3>
-					</div>	
-				</div>
-			</div><!-- /.wide-banner-->
-		</div><!-- /.col -->
-
-		<div class="col-md-3">
-			<div class="wide-banner cnt-strip">
-				<div class="image">
-					<img data-echo="assets/images/banners/1.jpg" src="assets/images/blank.gif" alt="">
-				</div>	
-				<div class="strip">
-					<div class="strip-inner">
-						<h5>NEW TRENDS 2016</h5>
-						<h3>Fashion From PARIS</h3>
-					</div>	
-				</div>
-			</div><!-- /.wide-banner-->
-		</div><!-- /.col -->
-
-	</div><!-- /.row -->
-</div><!-- /.wide-banners -->
-		<!-- ============================================== SCROLL TABS ============================================== -->
-<div id="product-tabs-slider" class="scroll-tabs wow fadeInUp">
-
-	<ul class="nav nav-tabs nav-tab-line" id="featured-products-1">
-		<li class="active"><a href="#new" data-toggle="tab">NEW ARRIVALS</a></li>
-		<li><a href="#featured" data-toggle="tab">FEATURED</a></li>
-		<li><a href="#special" data-toggle="tab">SPECIAL</a></li>
-		<li><a href="#best-seller" data-toggle="tab">BEST SELLER</a></li>
-	</ul><!-- /.nav-tabs -->
-
-	<div class="tab-content">
-		<div class="tab-pane in active" id="new">			
-			<div class="product-slider">
-				<div class="owl-carousel owl-theme prod-slider-4">
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/1.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/2.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/3.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/4.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/5.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/6.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/7.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/8.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-						
-				</div><!-- /.prod-slider -->
-			</div><!-- /.product-slider -->
-		</div><!-- /.tab-pane -->
-
-		<div class="tab-pane" id="featured">
-			<div class="product-slider">
-				<div class="owl-carousel owl-theme prod-slider-4">
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/4.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/5.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/6.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/7.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/8.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/9.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/10.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/11.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/12.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-						
-				</div><!-- /.prod-slider -->
-			</div><!-- /.product-slider -->
-		</div><!-- /.tab-pane -->
-
-		<div class="tab-pane" id="special">
-			<div class="product-slider">
-				<div class="owl-carousel owl-theme prod-slider-4">
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/12.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/11.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/10.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/9.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/8.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/7.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/6.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/5.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/4.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-						
-				</div><!-- /.prod-slider -->
-			</div><!-- /.product-slider -->
-		</div><!-- /.tab-pane -->
-
-		<div class="tab-pane" id="best-seller">
-			<div class="product-slider">
-				<div class="owl-carousel owl-theme prod-slider-4">
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/8.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/7.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/6.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/5.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/4.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/3.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/2.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-					 
-						<div class="item">
-							<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/1.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->						</div>
-						
-				</div><!-- /.prod-slider -->
-			</div><!-- /.product-slider -->
-		</div><!-- /.tab-pane -->
-
-	</div><!-- /.tab-content -->
-</div><!-- /.scroll-tabs -->
-<!-- ============================================== SCROLL TABS : END ============================================== -->
-		<div class="wide-banners wow fadeInUp">
-	<div class="row">
-
-		<div class="col-md-4">
-			<div class="wide-banner cnt-strip">
-				<div class="image">
-					<img data-echo="assets/images/banners/4.jpg" src="assets/images/blank.gif" alt="">
-				</div>	
-				<div class="strip strip-no-bg">
-					<div class="strip-inner">
-						<h5>2016 NEW FASHION SHOW</h5>
-						<h2>2014 FASHION SHOW</h2>
-					</div>	
-				</div>
-			</div><!-- /.wide-banner-->
-		</div><!-- /.col -->
-
-		<div class="col-md-8">
-			<div class="wide-banner cnt-strip">
-				<div class="image">
-					<img data-echo="assets/images/banners/5.jpg" src="assets/images/blank.gif" alt="">
-				</div>	
-				<div class="strip strip-no-bg strip-right-left">
-					<div class="strip-inner">
-						<h5>Fashion 2016</h5>
-						<h2>For women</h2>
-					</div>	
-				</div>
-			</div><!-- /.wide-banner-->
-		</div><!-- /.col -->
-
-	</div><!-- /.row -->
-</div><!-- /.wide-banners -->
-		<!-- ============================================== NEW ARRIVALS ============================================== -->
-<section class="section wow fadeInUp">
-	<h3 class="section-title">NEW ARRIVALS</h3>
-	<div class="product-grid">
-		<div class="row">
-										<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/11.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-							<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/10.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-							<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/12.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-							<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/5.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-				
-		</div><!-- /.row -->
-
-		<div class="row">
-							<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/4.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-							<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/6.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-							<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/2.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-							<div class="col-md-3">
-					<div class="product">
-	<div class="product-image">
-		<div class="image">
-			<img data-echo="assets/images/products/8.jpg" src="assets/images/blank.gif" alt="">
-		</div>
-		<div class="cart">
-			<div class="action">
-				<div><a href="#" class="btn btn-dark-blue btn-small-med btn-trans">Add to Cart</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a></div>
-				<div><a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a></div>
-			</div>
-		</div>	
-		<div class="tag tag-orange"><div class="text">HOT</div></div>
-	</div><!-- /.product-image -->
-
-	<div class="product-info">
-		<h3 class="name"><a href="#">Elizabeth PU Swing Dress</a></h3>
-		<div class="rating rateit-small"></div>
-		<div class="price"><span class="offer">$800.00</span><span class="actual">$900.00</span></div>
-	</div><!-- /.product-info -->
-</div><!-- /.product -->				</div>
-				
-		</div><!-- /.row -->
-	</div><!-- /.product-grid -->
-</section><!-- /.section -->
-<!-- ============================================== NEW ARRIVALS : END ============================================== -->
-	</div><!-- /.container -->
-</div><!-- /.body-container --><!-- ============================================== FOOTER ============================================== -->
-<footer>
-	
-	<!-- ============================================== BRANDS CAROUSEL ============================================== -->
-<div id="brands-carousel" class="logo-slider wow fadeInUp ">
-	<div class="container">
-		<div class="logo-slider-inner">	
-			<div id="logo-slider" class="owl-carousel owl-theme">
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-activeden.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-codecanyon.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-logo-audiojungle.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-themeforest.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-videohive.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-activeden.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-codecanyon.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-logo-audiojungle.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-themeforest.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-
-				<div class="item">
-					<a href="#" class="image">
-						<img data-echo="assets/images/brands/slide-log-videohive.png" src="assets/images/blank.gif" alt="">
-					</a>	
-				</div><!--/.item-->
-		    </div><!-- /.owl-carousel #logo-slider -->
-		</div><!-- /.logo-slider-inner -->
-	</div>
-</div><!-- /.logo-slider -->
-<!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	
-	<!-- ============================================== INFO BOXES ============================================== -->
-<div class="info-boxes wow fadeInUp">
-	<div class="container">
-		<div class="info-boxes-inner">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="info-box">
-						<div class="row">
-							<div class="col-xs-2">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-truck fa-stack-1x fa-inverse"></i>
-								</span>
-							</div>
-							<div class="col-xs-10">
-								<h4>FREE DELIVERY</h4>
-								<h6>Free Delivry On Oder Over $680.00</h6>
-							</div>
-						</div>	
-					</div>
-				</div><!-- .col -->
-
-				<div class="col-md-3">
-					<div class="info-box">
-						<div class="row">
-							<div class="col-xs-2">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-money fa-stack-1x fa-inverse"></i>
-								</span>
-							</div>
-							<div class="col-xs-10">
-								<h4>100% Money back</h4>
-								<h6>30 Day Money Back Guarantee.</h6>
-							</div>
-						</div>	
-					</div>
-				</div><!-- .col -->
-
-				<div class="col-md-3">
-					<div class="info-box">
-						<div class="row">
-							<div class="col-xs-2">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-								</span>
-							</div>
-							<div class="col-xs-10">
-								<h4>CALL TO ORDER</h4>
-								<h6>Call Phone: 84. 868 868 / 868 888</h6>
-							</div>
-						</div>	
-					</div>
-				</div><!-- .col -->
-
-				<div class="col-md-3">
-					<div class="info-box">
-						<div class="row">
-							<div class="col-xs-2">
-								<span class="fa-stack fa-lg">
-									<i class="fa fa-circle fa-stack-2x"></i>
-									<i class="fa fa-comments fa-stack-1x fa-inverse"></i>
-								</span>
-							</div>
-							<div class="col-xs-10">
-								<h4>online support</h4>
-								<a href="#"><h6>Click Here to Chat With Us!</h6></a>
-							</div>
-						</div>
-					</div>
-				</div><!-- .col -->
-			</div><!-- /.row -->
-		</div><!-- /.info-boxes-inner -->
-	</div><!-- /.container -->
-</div><!-- /.info-boxes -->
-<!-- ============================================== INFO BOXES : END ============================================== -->	
-	<div class="links-social">
-		<div class="container-class container">
-			<div class="links-social-inner">
-				<div class="row">
-					<div class="col-md-8">
-						<!-- ============================================== LINK GROUPS ============================================== -->
-<div class="link-groups">
-	<div class="row">
-		<div class="col-sm-3">
-			<div class="links">
-				<h3 class="title">ABOUT US</h3>
-				<ul>
-					<li><a href="#">Fixies</a></li>
-					<li><a href="#">City Bikes</a></li>
-					<li><a href="#">Glow</a></li>
-					<li><a href="#">Wheelsets</a></li>
-					<li><a href="#">Accessories</a></li>
-					<li><a href="#">Sale</a></li>
-					<li><a href="#">Clothing</a></li>
-					<li><a href="#">Shop by Size</a></li>
-				</ul>
-			</div>
-		</div><!-- /.col -->
-
-		<div class="col-sm-3">
-			<div class="links">
-				<h3 class="title">MY ACCOUNT</h3>
-				<ul>
-					<li><a href="#">Fixies</a></li>
-					<li><a href="#">City Bikes</a></li>
-					<li><a href="#">Glow</a></li>
-					<li><a href="#">Wheelsets</a></li>
-					<li><a href="#">Accessories</a></li>
-					<li><a href="#">Sale</a></li>
-					<li><a href="#">Clothing</a></li>
-					<li><a href="#">Shop by Size</a></li>
-				</ul>
-			</div>
-		</div><!-- /.col -->
-
-		<div class="col-sm-3">
-			<div class="links">
-				<h3 class="title">INFORMATION</h3>
-				<ul>
-					<li><a href="#">Fixies</a></li>
-					<li><a href="#">City Bikes</a></li>
-					<li><a href="#">Glow</a></li>
-					<li><a href="#">Wheelsets</a></li>
-					<li><a href="#">Accessories</a></li>
-					<li><a href="#">Sale</a></li>
-					<li><a href="#">Clothing</a></li>
-					<li><a href="#">Shop by Size</a></li>
-				</ul>
-			</div>
-		</div><!-- /.col -->
-
-		<div class="col-sm-3">
-			<div class="links">
-				<h3 class="title">SHOP</h3>
-				<ul>
-					<li><a href="#">Fixies</a></li>
-					<li><a href="#">City Bikes</a></li>
-					<li><a href="#">Glow</a></li>
-					<li><a href="#">Wheelsets</a></li>
-					<li><a href="#">Accessories</a></li>
-					<li><a href="#">Sale</a></li>
-					<li><a href="#">Clothing</a></li>
-					<li><a href="#">Shop by Size</a></li>
-				</ul>
-			</div>
-		</div><!-- /.col -->
-	</div><!-- /.row -->
-</div><!-- /.link-groups -->
-<!-- ============================================== LINK GROUPS : END ============================================== -->					</div><!-- /.col -->
-
-					<div class="col-md-4">
-						<!-- ============================================== SOCIAL-NEWSLETTER ============================================== -->
-<div class="social-newsletter">
-	<div class="social-links">
-		<h3 class="title">CONNECT WITH US</h3>
-		<ul class="social list-inline list-unstyled">
-			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-			<li><a href="#"><i class="fa fa-rss"></i></a></li>
-			<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-		</ul>
-	</div><!-- /.social-links -->
-
-	<div class="newsletter">
-		<h3 class="title">GET NEWSLETTER</h3>
-		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Email Address">
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="button">Subscribe</button>
-			</span>
-		</div>
-	</div><!-- /.newsletter -->
-</div><!-- /.social-newsletter -->
-<!-- ============================================== SOCIAL-NEWSLETTER : END ============================================== -->					</div><!-- /.col-md-4 -->
-				</div><!-- /.row -->
-			</div><!-- /.links-social-inner-->
-		</div><!-- /.container -->
-	</div><!-- /.links-social -->
-
-	<div class="copyright">&copy; <a href="#">LEEBROSUS</a> | ALL RIGHTS RESERVED.</div>
-</footer>
-<!-- ============================================== FOOTER : END ============================================== -->
-		<!-- For demo purposes – can be removed on production -->
-<div class="config open">
-	<div class="config-options">
-		<h4>Pages</h4>
-		<div class="btn-group" style="width:100%;">
-			<button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
-				View <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu">
-				<li role="presentation" class="dropdown-header">Home Pages</li>
-				<li><a href="index.html">Home I</a></li>
-				<li><a href="index-2.html">Home II</a></li>
-				<li><a href="index-3.html">Home III</a></li>
-				<li><a href="index-4.html">Home IV</a></li>
-				<li><a href="index-5.html">Home V</a></li>
-				<li><a href="index-6.html">Home VI</a></li>
-			  	<li class="divider"></li>
-			  	<li role="presentation" class="dropdown-header">Other Pages</li>
-				<li><a href="category.html">Category Listing</a></li>
-				<li><a href="single-product.html">Single Product</a></li>
-				<li><a href="cart.html">Shopping Cart Summary</a></li>
-				<li><a href="checkout.html">Checkout</a></li>
-			</ul>
-		</div>
-		<h4>Header Styles</h4>
-		<ul class="list-unstyled">
-			<li><a href="index.html">Header 1</a></li>
-			<li><a href="index-2.html">Header 2</a></li>
-			<li><a href="index-4.html">Header 3</a></li>
-		</ul>
-		<h4>Layouts</h4>
-		<ul class="list-unstyled">
-			<li><a href="index-5.html">Full Width</a></li>
-			<li><a href="index-6.html">Boxed</a></li>
-		</ul>
-		<h4>Colors</h4>
-		<ul class="list-unstyled">
-			<li><a class="changecolor green-text" href="#" title="Green color">Green</a></li>
-            <li><a class="changecolor blue-text" href="#" title="Blue color">Blue</a></li>
-            <li><a class="changecolor red-text" href="#" title="Red color">Red</a></li>
-            <li><a class="changecolor navy-text" href="#" title="Navy color">Navy</a></li>
-            <li><a class="changecolor orange-text" href="#" title="Orange color">Orange</a></li>
-		</ul>
-	</div>
-	<a class="show-theme-options" href="#"><i class="fa fa-gear"></i></a>
-</div>
-<!-- For demo purposes – can be removed on production : End -->
-
-		<script type="text/javascript" src="assets/js/bootstrap-hover-dropdown.min.js"></script>
-		<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
-		<script type="text/javascript" src="assets/js/echo.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.rateit.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.jcarousel.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.bxslider.min.js"></script>
-		<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-		<script type="text/javascript" src="assets/js/lightbox.min.js"></script>
-		<script type="text/javascript" src="assets/js/wow.min.js"></script>
-		<script type="text/javascript" src="assets/js/scripts.js"></script>
-		<script>
-			echo.init({
-				offset: 100,
-				throttle: 250,
-				unload: false
-			});
-    	</script>
-
-		<!-- For demo purposes – can be removed on production -->
-	
-		<script src="switchstylesheet/switchstylesheet.js"></script>
-		
-		<script>
-			$(document).ready(function(){ 
-				$(".changecolor").switchstylesheet( { seperator:"color"} );
-				$('.show-theme-options').click(function(){
-					$(this).parent().toggleClass('open');
-					return false;
-				});
-			});
-
-			$(window).bind("load", function() {
-			   $('.show-theme-options').delay(2000).trigger('click');
-			});
-		</script>
-		<!-- For demo purposes – can be removed on production : End -->
-
-	</body>
-</html>
 </template>
+
+
