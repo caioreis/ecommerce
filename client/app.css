@@ -1848,7 +1848,7 @@ header.header-style-3 .header-nav .cnt-search .input-group button i {
   width: 100%;
 }
 .tag.tag-orange {
-  background: url('../images/tag-orange.png') no-repeat top right;
+  background: url('/assets/images/tag-orange.png') no-repeat top right;
 }
 .tag.tag-orange .text {
   font-family: 'Roboto', sans-serif;
