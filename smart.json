@@ -4,6 +4,7 @@
     "bootstrap-3": {},
     "bxslider": {},
     "jqueryui": {},
-    "font-awesome": {}
+    "font-awesome": {},
+    "owl-carousel": {}
   }
 }

@@ -1,11 +1,11 @@
 <template name="MasterLayout">
-	<header class="header-style-1">
+	<header class="header-style-2 header-style-1">
 		{{> topMenu}}
 		{{> navBar}}
 	</header>
 	<div class="body-container">
 		<div class="container">
-			<div id='fodasse' style="height: 200px"></div>
+			{{> yield}}
 		</div>
 	</div>
 	<footer>
@@ -14,73 +14,6 @@
 </template>
 
 <template name="footer">
-	<div id="brands-carousel" class="logo-slider wow fadeInUp ">
-		<div class="container">
-			<div class="logo-slider-inner">	
-				<div id="logo-slider" class="owl-carousel owl-theme">
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-activeden.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-codecanyon.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-logo-audiojungle.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-themeforest.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-videohive.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-activeden.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-codecanyon.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-logo-audiojungle.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-themeforest.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-
-					<div class="item">
-						<a href="#" class="image">
-							<img data-echo="assets/images/brands/slide-log-videohive.png" src="assets/images/blank.gif" alt="">
-						</a>	
-					</div><!--/.item-->
-				</div><!-- /.owl-carousel #logo-slider -->
-			</div><!-- /.logo-slider-inner -->
-		</div>
-	</div>
 	<div class="info-boxes wow fadeInUp">
 		<div class="container">
 			<div class="info-boxes-inner">
