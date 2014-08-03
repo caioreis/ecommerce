@@ -12,7 +12,8 @@ Template.Home.events({
 
 Template.Home.helpers({
   populate: function() {
-    return Products.find({});
+  	console.log('Hello', Products.find({}, {reactive: true}).fetch());
+    return Products.find({}, {reactive: false}).fetch();
   }
 });
 
