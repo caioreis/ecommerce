@@ -1,32 +1,21 @@
 /*****************************************************************************/
 /* Products: Event Handlers and Helpers */
 /*****************************************************************************/
-Template.Products.events({
-  /*
-   * Example: 
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+// Products Index
+Template.ProductsIndex.events({});
+Template.ProductsIndex.helpers({});
+// Products new
+Template.ProductsNew.events({
+    'click #submit_form_product' : function(e,tpl){
+        e.preventDefault();
+        alert('ok')
+    }
 });
-
-Template.Products.helpers({
-  /*
-   * Example: 
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
-});
+Template.ProductsNew.helpers({});
 
 /*****************************************************************************/
 /* Products: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Products.created = function () {
-};
-
-Template.Products.rendered = function () {
-};
-
-Template.Products.destroyed = function () {
-};
+Template.Products.created = function () {};
+Template.Products.rendered = function () {};
+Template.Products.destroyed = function () {};
