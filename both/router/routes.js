@@ -2,17 +2,15 @@
 /* Client and Server Routes */
 /*****************************************************************************/
 Router.configure({
-  layoutTemplate: 'MasterLayout',
-  loadingTemplate: 'Loading',
-  notFoundTemplate: 'NotFound',
-  templateNameConverter: 'upperCamelCase',
-  routeControllerNameConverter: 'upperCamelCase'
+	layoutTemplate: 'MasterLayout',
+	loadingTemplate: 'Loading',
+	notFoundTemplate: 'NotFound',
+	templateNameConverter: 'upperCamelCase',
+	routeControllerNameConverter: 'upperCamelCase'
 });
 
 Router.map(function () {
-  /*
-    Example:
-      this.route('home', {path: '/'});
-  */
-   this.route('home', {path: '/'});
+	this.route('home', {path: '/'});
+	this.route('products', {path: '/products'});
+	this.route('product',{path: '/product/:name'});
 });

@@ -3,10 +3,18 @@
 		{{> topMenu}}
 		{{> navBar}}
 	</header>
-	<div class="body-container">
+	<div class="breadcrumb">
 		<div class="container">
-			{{> yield}}
-		</div>
+			<div class="breadcrumb-inner">
+				<ul class="list-inline list-unstyled">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Women</a></li>
+				</ul>
+			</div>	
+		</div>		
+	</div>
+	<div class="body-container">
+		{{> yield}}
 	</div>
 	<footer>
 		{{> footer}}

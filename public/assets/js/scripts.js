@@ -295,16 +295,16 @@ $(document).ready(function(){
 /*	RATING
 /*===================================================================================*/
 
-$(document).ready(function(){
-	$('.rating').rateit({max: 5, step: 1, value : 3, resetable : false , readonly : true});
-});
+//$(document).ready(function(){
+//	$('.rating').rateit({max: 5, step: 1, value : 3, resetable : false , readonly : true});
+//});
 
 /*===================================================================================*/
 /*  WOW 
 /*===================================================================================*/
 
 $(document).ready(function () {
-    new WOW().init();
+//    new WOW().init();
 });
 
 /*===================================================================================*/

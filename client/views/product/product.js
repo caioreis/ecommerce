@@ -1,7 +1,7 @@
 /*****************************************************************************/
-/* Home: Event Handlers and Helpers */
+/* Product: Event Handlers and Helpers */
 /*****************************************************************************/
-Template.Home.events({
+Template.Product.events({
   /*
    * Example: 
    *  'click .selector': function (e, tmpl) {
@@ -10,20 +10,24 @@ Template.Home.events({
    */
 });
 
-Template.Home.helpers({
-  populate: function() {
-    return Products.find({});
-  }
+Template.Product.helpers({
+  /*
+   * Example: 
+   *  items: function () {
+   *    return Items.find();
+   *  }
+   */
 });
 
 /*****************************************************************************/
-/* Home: Lifecycle Hooks */
+/* Product: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Home.created = function () {
+Template.Product.created = function () {
 };
 
-Template.Home.rendered = function () {
+Template.Product.rendered = function () {
+  initSlider();
 };
 
-Template.Home.destroyed = function () {
+Template.Product.destroyed = function () {
 };
