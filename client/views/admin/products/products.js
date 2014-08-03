@@ -3,15 +3,21 @@
 /*****************************************************************************/
 // Products Index
 Template.ProductsIndex.events({});
-Template.ProductsIndex.helpers({});
-// Products new
-Template.ProductsNew.events({
-    'click #submit_form_product' : function(e,tpl){
-        e.preventDefault();
-        alert('ok')
+Template.ProductsIndex.helpers({
+    productsCollection : function(){
+        return Products.find();
     }
 });
+// Products new
+Template.ProductsNew.events({});
 Template.ProductsNew.helpers({});
+// Products edit
+Template.ProductsEdit.events({});
+Template.ProductsEdit.helpers({
+    ProductDoc : function(){
+        return Products.findOne({_id:Session.get('Product_id')})
+    }
+});
 
 /*****************************************************************************/
 /* Products: Lifecycle Hooks */

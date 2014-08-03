@@ -20,10 +20,16 @@ Router.map(function () {
     // Products
     this.route('products.index', {
         path: '/products',
-        layoutTemplate : 'Admin'
+        layoutTemplate : 'Admin',
+        controller: 'ProductsIndex'
     });
     this.route('products.new', {
         path: '/products/create',
         layoutTemplate : 'Admin'
+    });
+    this.route('products.edit', {
+        path: '/products/:_id/edit',
+        layoutTemplate : 'Admin',
+        controller: 'ProductsEdit'
     });
 });

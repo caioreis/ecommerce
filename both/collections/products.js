@@ -38,11 +38,12 @@ Products = new Meteor.Collection('products', {
         availability: {
             type: String,
             label: "Disponibilidade Imediata",
-            allowedValues: ['Y', 'N'],
+            allowedValues: ['Immediate','custom made', 'Unavailable'],
             autoform: {
                 options: [
-                    {label: "Sim", value: "Y"},
-                    {label: "Não", value: "N"}
+                    {label: "Imediata", value: "Immediate"},
+                    {label: "Sob Encomenda", value: "custom_made"},
+                    {label: "Indisponível", value: "Unavailable"}
                 ]
             }
         },

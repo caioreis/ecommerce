@@ -4,11 +4,16 @@ if (Products.find({}).count() == 0) {
 			name: "Product " + i,
 			description: "Descrição",
 			measures : {
-				size: "size", weight: "weight"
-			}, 
-			stock: i,  
-			availability: "Ok", 
-			price: "30" + i 
+				width: 0.0 + i,
+                height: 0.0 + i,
+                depth: 0.0 + i,
+                weight: 0.0 + i
+			},
+			stock: i,
+			availability: "Immediate",
+			price: "30" + i,
+            createdAt : new Date(),
+            updatedAt : new Date()
 		});
 	}
 }
