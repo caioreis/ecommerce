@@ -16,6 +16,6 @@ Template.ProductsNew.helpers({});
 /*****************************************************************************/
 /* Products: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Products.created = function () {};
-Template.Products.rendered = function () {};
-Template.Products.destroyed = function () {};
+Template.ProductsIndex.created = function () {};
+Template.ProductsIndex.rendered = function () {};
+Template.ProductsIndex.destroyed = function () {};

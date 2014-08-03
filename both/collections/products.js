@@ -1,5 +1,5 @@
 Products = new Meteor.Collection('products', {
-    Schema : {
+    schema : {
         name: {
             type: String
         },
