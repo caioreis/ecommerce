@@ -12,5 +12,5 @@ Router.configure({
 Router.map(function () {
 	this.route('home', {path: '/'});
 	this.route('products', {path: '/products'});
-	this.route('product',{path: '/product/:name'});
+	this.route('product',{path: '/product/:_id'});
 });
