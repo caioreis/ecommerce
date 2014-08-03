@@ -1,4 +1,4 @@
 packages
 !.meteor/packages
 smart.lock
-.idea/
+.idea

@@ -4,7 +4,7 @@
 // Products Index
 Template.ProductsIndex.events({});
 Template.ProductsIndex.helpers({
-    productsCollection : function(){
+    products : function(){
         return Products.find();
     }
 });

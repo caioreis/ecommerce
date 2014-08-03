@@ -37,12 +37,12 @@ Products = new Meteor.Collection('products', {
         },
         availability: {
             type: String,
-            label: "Disponibilidade Imediata",
-            allowedValues: ['Immediate','custom made', 'Unavailable'],
+            label: "Disponibilidade",
+            allowedValues: ['Immediate','Custom Made', 'Unavailable'],
             autoform: {
                 options: [
                     {label: "Imediata", value: "Immediate"},
-                    {label: "Sob Encomenda", value: "custom_made"},
+                    {label: "Sob Encomenda", value: "Custom Made"},
                     {label: "Indisponível", value: "Unavailable"}
                 ]
             }
@@ -51,12 +51,6 @@ Products = new Meteor.Collection('products', {
             type: Number,
             label: "Preço",
             decimal : true
-        },
-        createdAt: {
-            type: Date
-        },
-        updatedAt: {
-            type: Date
         }
     }
 });

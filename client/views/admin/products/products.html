@@ -3,13 +3,13 @@
     <table class="table table-condensed table-striped table-bordered">
         <thead>
             <th>Nome</th>
-            <th>Disponibilidade Imediata</th>
+            <th>Disponibilidade</th>
             <th>Estoque</th>
             <th>Preço</th>
             <th>Editar</th>
         </thead>
         <tbody>
-        {{#each productsCollection}}
+        {{#each products}}
         <tr>
             <td>{{name}}</td>
             <td>{{availability}}</td>
@@ -23,7 +23,7 @@
 </template>
 <template name="ProductsNew">
     <h1>Novo Produto</h1>
-    <hr/>
+    <hr/> 
     {{#autoForm collection="Products" id="insertProductsForm" type="insert"}}
     {{> afFieldLabel name='name'}}
     {{> afFieldInput name="name"}}
@@ -39,11 +39,12 @@
     {{> afFieldInput name="price" step="0.01"}}
     <br/>
     <a class="btn btn-default" href="{{pathFor 'products.index'}}">Voltar</a>
-    <input type="submit" name="submit_form" id="submit_form_product" value="Salvar Produto" class="btn btn-success"/>
-    <br/>
-    <br/>
+    <button type="submit" name="submit_form" id="submit_form_product" class="btn btn-success">
+        Salvar Produto
+    </button>
     {{/autoForm}}
 </template>
+
 <template name="ProductsEdit">
     <h1>Editando Produto</h1>
     <hr/>
