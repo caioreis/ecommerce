@@ -5,7 +5,17 @@
     <h1>Novo Produto</h1>
     <hr/>
     {{#autoForm collection="Products" id="insertProductsForm" type="insert"}}
-        {{> afFieldLabel name='name'}}
-        {{> afFieldInput name="name"}}
+    {{> afFieldLabel name='name'}}
+    {{> afFieldInput name="name"}}
+    {{> afFieldLabel name='description'}}
+    {{> afFieldInput name="description" rows="6"}}
+    <br/>
+    {{> afObjectField name="measures" step="0.01"}}
+    {{> afFieldLabel name='stock'}}
+    {{> afFieldInput name='stock'}}
+    {{> afFieldLabel name='availability'}}
+    {{> afFieldInput name='availability'}}
+    {{> afFieldLabel name='price'}}
+    {{> afFieldInput name="price" step="0.01"}}
     {{/autoForm}}
 </template>

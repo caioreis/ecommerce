@@ -1,34 +1,55 @@
 Products = new Meteor.Collection('products', {
     schema : {
         name: {
-            type: String
+            type: String,
+            label : "Nome"
         },
         description: {
-            type: String
+            type: String,
+            label: "Descrição"
         },
         measures: {
-            type: [Object]
+            type: Object
         },
-        "measures.$.width": {
-            type: Number
+        "measures.width": {
+            type: Number,
+            label: "Largura",
+            decimal : true
         },
-        "measures.$.height": {
-            type: Number
+        "measures.height": {
+            type: Number,
+            label: "Altura",
+            decimal : true
         },
-        "measures.$.depth": {
-            type: Number
+        "measures.depth": {
+            type: Number,
+            label: "Profundidade",
+            decimal : true
         },
-        "measures.$.weight": {
-            type: Number
+        "measures.weight": {
+            type: Number,
+            label: "Peso",
+            decimal : true
         },
         stock: {
-            type: Number
+            type: Number,
+            label: "Estoque"
         },
         availability: {
-            type: String
+            type: String,
+            label: "Disponibilidade Imediata",
+            allowedValues: ['Y', 'N'],
+            autoform: {
+                options: [
+                    {label: "Sim", value: "Y"},
+                    {label: "Não", value: "N"}
+                ]
+            }
         },
         price: {
-            type: Number
+            type: Number,
+            label: "Preço",
+            decimal : true
         },
         createdAt: {
             type: Date
