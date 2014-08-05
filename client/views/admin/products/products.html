@@ -33,7 +33,15 @@
     </table>
 </template>
 <template name="ProductsNew">
-    <h1>Novo Produto</h1>
+    <h1>
+        <div class="pull-left">
+            Novo Produto
+        </div>
+        <div class="pull-right">
+            <a href="{{pathFor 'products.index'}}" class="btn btn-default">Voltar</a>
+        </div>
+        <div class="clearfix"></div>
+    </h1>
     <hr/> 
     {{#autoForm collection="Products" id="ProductsForm" type="insert"}}
     {{> afFieldLabel name='name'}}
@@ -54,6 +62,7 @@
         Salvar Produto
     </button>
     {{/autoForm}}
+    <br>
 </template>
 
 <template name="ProductsEdit">
@@ -63,6 +72,7 @@
             Editando Produto
         </div>
         <div class="pull-right">
+            <a href="{{pathFor 'products.index'}}" class="btn btn-default pull-right">Voltar</a>
             {{#afDeleteButton id="ProductsForm" collection="Products" doc=ProductDoc}}
             Excluir Produto
             {{/afDeleteButton}}
