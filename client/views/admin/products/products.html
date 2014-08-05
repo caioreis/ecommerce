@@ -1,5 +1,12 @@
 <template name="ProductsIndex">
-    <a href="{{pathFor 'products.new'}}" class="btn btn-primary">Novo Produto</a>
+    <h1>
+    <div class="pull-left">Produtos</div>
+    <div class="pull-right">
+        <a href="{{pathFor 'products.new'}}" class="btn btn-primary">Novo Produto</a>
+    </div>
+    </h1>
+    <div class="clearfix"></div>
+    <hr>
     <table class="table table-condensed table-striped table-bordered">
         <thead>
             <th>Nome</th>
@@ -9,22 +16,26 @@
             <th>Editar</th>
         </thead>
         <tbody>
-        {{#each products}}
-        <tr>
-            <td>{{name}}</td>
-            <td>{{availability}}</td>
-            <td>{{stock}}</td>
-            <td>{{price}}</td>
-            <td><a href="{{pathFor 'products.edit' _id}}" class="btn btn-info">Editar</a></td>
-        </tr>
-        {{/each}}
+            {{#each products}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{availability}}</td>
+                <td>{{stock}}</td>
+                <td>{{price}}</td>
+                <td><a href="{{pathFor 'products.edit' _id}}" class="btn btn-info">Editar</a></td>
+            </tr>
+            {{else}}
+             <tr>
+                 <td colspan="5">Nenhum produto cadastrado</td>
+             </tr>
+            {{/each}}
         </tbody>
     </table>
 </template>
 <template name="ProductsNew">
     <h1>Novo Produto</h1>
     <hr/> 
-    {{#autoForm collection="Products" id="insertProductsForm" type="insert"}}
+    {{#autoForm collection="Products" id="ProductsForm" type="insert"}}
     {{> afFieldLabel name='name'}}
     {{> afFieldInput name="name"}}
     {{> afFieldLabel name='description'}}
@@ -46,9 +57,19 @@
 </template>
 
 <template name="ProductsEdit">
-    <h1>Editando Produto</h1>
+    {{#autoForm collection="Products" doc=ProductDoc id="ProductsForm" type="update"}}
+    <h1>
+        <div class="pull-left">
+            Editando Produto
+        </div>
+        <div class="pull-right">
+            {{#afDeleteButton id="ProductsForm" collection="Products" doc=ProductDoc}}
+            Excluir Produto
+            {{/afDeleteButton}}
+        </div>
+        <div class="clearfix"></div>
+    </h1>
     <hr/>
-    {{#autoForm collection="Products" doc=ProductDoc id="updateProductsForm" type="update"}}
     {{> afFieldLabel name='name'}}
     {{> afFieldInput name="name"}}
     {{> afFieldLabel name='description'}}

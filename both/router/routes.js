@@ -15,21 +15,23 @@ Router.map(function () {
 
 
 
-    /* Admin Routes */
+  /* Admin Routes */
 
     // Products
     this.route('products.index', {
-        path: '/products',
-        layoutTemplate : 'Admin',
-        controller: 'ProductsIndex'
+      path: '/products',
+      layoutTemplate : 'Admin',
+      controller: 'ProductsIndex'
     });
     this.route('products.new', {
-        path: '/products/create',
-        layoutTemplate : 'Admin'
+      path: '/products/create',
+      layoutTemplate : 'Admin',
+      controller: 'ProductsNew'
+
     });
     this.route('products.edit', {
-        path: '/products/:_id/edit',
-        layoutTemplate : 'Admin',
-        controller: 'ProductsEdit'
+      path: '/products/:_id/edit',
+      layoutTemplate : 'Admin',
+      controller: 'ProductsEdit'
     });
-});
+  });

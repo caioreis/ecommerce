@@ -1,10 +1,23 @@
 ProductsIndex = RouteController.extend({
   waitOn: function () {
-      Meteor.subscribe('products');
+    Meteor.subscribe('products');
   },
 
   data: function () {
-      return Products.find({})
+    return Products.find({})
+  },
+
+  action: function () {
+    this.render();
+  }
+});
+ProductsNew = RouteController.extend({
+  waitOn: function () {
+  },
+
+  data: function () {
+    Session.set('docform',null);      
+    Session.set('typeform','insert');      
   },
 
   action: function () {
@@ -13,11 +26,12 @@ ProductsIndex = RouteController.extend({
 });
 ProductsEdit = RouteController.extend({
   waitOn: function () {
-      Meteor.subscribe('SingleProduct',this.params._id);
+    Meteor.subscribe('singleProduct',this.params._id);
   },
 
   data: function () {
-      return Session.set('Product_id',this.params._id);
+    Session.set('typeform','update');      
+    Session.set('Product_id',this.params._id);
   },
 
   action: function () {
