@@ -134,9 +134,9 @@
 					<div class="col-md-6">
 						<div class="product-info">
 							<h1 class="name">
-							<p id="textArea" class="editable" data-type="text" data-placeholder="Nome Do Produto" data-emptytext="Nome do produto">
+							<section id="name" data-field="name" class="editable" data-type="text" data-placeholder="Nome Do Produto" data-emptytext="Nome do produto">
 							{{name}}
-							</p></h1>
+							</section></h1>
 							
 							<div class="rating-reviews">
 								<div class="row">
@@ -160,14 +160,20 @@
 									</div>
 									<div class="col-sm-9">
 										<div class="stock-box">
-											<span class="value">{{availability}}</span>
+											<span class="value">
+											<section id="availability" data-field="availability" class="editable" data-type="select">
+											{{availability}}
+											</section>
+											</span>
 										</div>	
 									</div>
 								</div><!-- /.row -->	
 							</div><!-- /.stock-container -->
 
 							<div class="description-container">
-								{{description}}
+							<section id="description" data-field="description" class="editable" data-type="textarea" data-rows="4" data-placeholder="Descriçao" data-emptytext="Descriçao">
+							{{description}}
+							</section>
 							</div><!-- /.description-container -->
 
 							<div class="quantity-container info-container">
