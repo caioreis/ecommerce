@@ -26,6 +26,17 @@ Template.Product.created = function () {
 };
 
 Template.Product.rendered = function () {
+
+this.$('#textArea.editable').editable({
+  success: function(response, newValue) {
+    Products.update(Session.get('product_id_page'),{
+      $set : {
+        name : newValue
+      }
+    });
+    $(this).editable('destroy').editable();
+  }
+});
   initSlider();
 };
 

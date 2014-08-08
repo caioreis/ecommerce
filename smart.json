@@ -8,6 +8,7 @@
     "owl-carousel": {},
     "collection2": {},
     "autoform": {},
-    "toastjs": {}
+    "toastjs": {},
+    "x-editable-bootstrap": {}
   }
 }
