@@ -6,7 +6,16 @@ Template.ProductsIndex.events({});
 Template.ProductsIndex.helpers({
     products : function(){
         return Products.find();
-    }
+    },
+    TranslateAvailability : function(val){
+    var title = [
+      {trans: 'Imediata', value: 'Immediate'},
+      {trans: 'Sob Encomenda', value: 'Custom Made'},
+      {trans: 'Indisponível', value: 'Unavailable'}
+    ];
+
+    return _.findWhere(title,{value : val}).trans;
+  }
 });
 // Products new
 Template.ProductsNew.events({});

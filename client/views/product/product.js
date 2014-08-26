@@ -11,12 +11,15 @@ Template.Product.events({
  });
 
 Template.Product.helpers({
-  /*
-   * Example: 
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  TranslateAvailability : function(val){
+    var title = [
+      {trans: 'Imediata', value: 'Immediate'},
+      {trans: 'Sob Encomenda', value: 'Custom Made'},
+      {trans: 'Indisponível', value: 'Unavailable'}
+    ];
+
+    return _.findWhere(title,{value : val}).trans;
+  }
 });
 
 /*****************************************************************************/
@@ -41,9 +44,9 @@ Template.Product.rendered = function () {
 
   $("#availability").editable("destroy").editable({
     source : [
-      {text: 'Imediata', value: 'Immediate'},
-      {text: 'Sob Encomenda', value: 'Custom Made'},
-      {text: 'Indisponível', value: 'Unavailable'}
+    {text: 'Imediata', value: 'Immediate'},
+    {text: 'Sob Encomenda', value: 'Custom Made'},
+    {text: 'Indisponível', value: 'Unavailable'}
     ],
     mode : 'inline',
     display: function() {},

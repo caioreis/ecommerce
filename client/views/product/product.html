@@ -162,7 +162,7 @@
 										<div class="stock-box">
 											<span class="value">
 											<section id="availability" data-field="availability" class="editable" data-type="select">
-											{{availability}}
+											{{TranslateAvailability availability}}
 											</section>
 											</span>
 										</div>	
@@ -180,23 +180,25 @@
 								<div class="row">
 									
 									<div class="col-sm-2">
-										<span class="label">Quantity :</span>
+										<span class="label">Quantidade :</span>
 									</div>
 									
 									<div class="col-sm-2">
-										<input type="text" class="txt txt-qty" value="10">
+										<section id="stock" data-field="stock" class="txt txt-qty editable" data-type="text" data-rows="4" data-placeholder="quantidade" data-emptytext="Quantidade">
+							{{stock}}
+							</section>
 									</div>
 
-									<div class="col-sm-4">
+									<!-- div class="col-sm-4">
 										<a href="#" class="btn btn-blue btn-block btn-lg">ADD TO CART</a>
-									</div>
+									</div -->
 
-									<div class="col-sm-3">
+									<!-- div class="col-sm-3">
 										<div class="btn-options">
 											<a href="#" class="lnk"><i class="fa fa-heart"></i> Add to wishlist</a>
 											<a href="#" class="lnk"><i class="fa fa-exchange"></i> Add to compare</a>
 										</div>	
-									</div>
+									</div -->
 								</div><!-- /.row -->
 							</div><!-- /.quantity-container -->
 
@@ -211,15 +213,18 @@
 
 									<div class="col-sm-3">
 										<div class="price-box">
-											<span class="price">${{price}}.00</span>
+										<span id="price" data-field="price" class="price editable" data-type="text" data-rows="4" data-placeholder="quantidade" data-emptytext="Quantidade">
+							{{price}}
+							</span>
+											<!-- span class="price">${{price}}.00</span -->
 										</div>
 									</div>
 
-									<div class="col-sm-4">
+									<!-- div class="col-sm-4">
 										<div class="price-box">
 											<span class="price-strike">${{price}}.00</span>
 										</div>
-									</div>
+									</div-->
 
 								</div><!-- /.row -->
 							</div><!-- /.price-container -->

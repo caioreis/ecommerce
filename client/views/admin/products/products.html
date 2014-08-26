@@ -19,7 +19,7 @@
             {{#each products}}
             <tr>
                 <td>{{name}}</td>
-                <td>{{availability}}</td>
+                <td>{{TranslateAvailability availability}}</td>
                 <td>{{stock}}</td>
                 <td>{{price}}</td>
                 <td><a href="{{pathFor 'product' _id}}" class="btn btn-info">Editar</a></td>
@@ -49,13 +49,13 @@
     {{> afFieldLabel name='description'}}
     {{> afFieldInput name="description" rows="6"}}
     <br/>
-    {{> afObjectField name="measures" step="0.01"}}
+    {{> afObjectField name="measures"}}
     {{> afFieldLabel name='stock'}}
     {{> afFieldInput name='stock'}}
     {{> afFieldLabel name='availability'}}
     {{> afFieldInput name='availability'}}
     {{> afFieldLabel name='price'}}
-    {{> afFieldInput name="price" step="0.01"}}
+    {{> afFieldInput name="price"}}
     <br/>
     <a class="btn btn-default" href="{{pathFor 'products.index'}}">Voltar</a>
     <button type="submit" name="submit_form" id="submit_form_product" class="btn btn-success">
@@ -85,13 +85,13 @@
     {{> afFieldLabel name='description'}}
     {{> afFieldInput name="description" rows="6"}}
     <br/>
-    {{> afObjectField name="measures" step="0.01"}}
+    {{> afObjectField name="measures"}}
     {{> afFieldLabel name='stock'}}
     {{> afFieldInput name='stock'}}
     {{> afFieldLabel name='availability'}}
     {{> afFieldInput name='availability'}}
     {{> afFieldLabel name='price'}}
-    {{> afFieldInput name="price" step="0.01"}}
+    {{> afFieldInput name="price"}}
     <br/>
     <a class="btn btn-default" href="{{pathFor 'products.index'}}">Voltar</a>
     <input type="submit" name="submit_form" id="submit_form_product" value="Salvar Produto" class="btn btn-success"/>
