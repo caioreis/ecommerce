@@ -1,32 +1,36 @@
 /*****************************************************************************/
 /* Products: Event Handlers and Helpers */
 /*****************************************************************************/
-Template.Products.events({
-  /*
-   * Example: 
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
-});
+// Products Index
+Template.ProductsIndex.events({});
+Template.ProductsIndex.helpers({
+    products : function(){
+        return Products.find();
+    },
+    TranslateAvailability : function(val){
+    var title = [
+      {trans: 'Imediata', value: 'Immediate'},
+      {trans: 'Sob Encomenda', value: 'Custom Made'},
+      {trans: 'Indisponível', value: 'Unavailable'}
+    ];
 
-Template.Products.helpers({
-  /*
-   * Example: 
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+    return _.findWhere(title,{value : val}).trans;
+  }
+});
+// Products new
+Template.ProductsNew.events({});
+Template.ProductsNew.helpers({});
+// Products edit
+Template.ProductsEdit.events({});
+Template.ProductsEdit.helpers({
+    ProductDoc : function(){
+        return Products.findOne({_id:Session.get('Product_id')})
+    }
 });
 
 /*****************************************************************************/
 /* Products: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Products.created = function () {
-};
-
-Template.Products.rendered = function () {
-};
-
-Template.Products.destroyed = function () {
-};
+Template.ProductsIndex.created = function () {};
+Template.ProductsIndex.rendered = function () {};
+Template.ProductsIndex.destroyed = function () {};

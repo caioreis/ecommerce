@@ -1,0 +1,51 @@
+<template name="Admin">
+    <header class="header-style-2 header-style-1">
+        {{> topMenu}}
+        {{> navBar}}
+    </header>
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <ul class="list-inline list-unstyled">
+                    <li><a href="#"><!-- Botar isso pra gerar automaticamente--></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body-container">
+        <div class="checkout-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 checkout-progress-container">
+                        <div class="checkout-progress">
+                            <h2>Área Administrativa</h2>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div><a href="{{pathFor 'products.index'}}">Produtos</a></div>
+                                </li>
+                                <li>
+                                    <div>Shipping Address</div>
+                                </li>
+                                <li>
+                                    <div>Shipping Method</div>
+                                </li>
+                                <li>
+                                    <div>Payment Method</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.checkout-progress-container -->
+
+                    <div class="col-md-9 checkout-boxes-container">
+                        {{> yield}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        {{> footer}}
+    </footer>
+</template>

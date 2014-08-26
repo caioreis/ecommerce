@@ -4,6 +4,7 @@ ProductController = RouteController.extend({
   },
 
   data: function () {
+  	Session.set('product_id_page',this.params._id);
   	return Products.findOne();
   },
 

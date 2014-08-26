@@ -1,308 +1,101 @@
-<template name="Products">
-	<div class="checkout-container">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 checkout-progress-container">
-					<div class="checkout-progress">
-						<h2>checkout progress</h2>
-						<ul class="list-unstyled">
-							<li><div>Billing Address</div></li>
-							<li><div>Shipping Address</div></li>
-							<li><div>Shipping Method</div></li>       
-							<li><div>Payment Method</div></li>
-						</ul>
-					</div>
-				</div><!-- /.checkout-progress-container -->
+<template name="ProductsIndex">
+    <h1>
+    <div class="pull-left">Produtos</div>
+    <div class="pull-right">
+        <a href="{{pathFor 'products.new'}}" class="btn btn-primary">Novo Produto</a>
+    </div>
+    </h1>
+    <div class="clearfix"></div>
+    <hr>
+    <table class="table table-condensed table-striped table-bordered">
+        <thead>
+            <th>Nome</th>
+            <th>Disponibilidade</th>
+            <th>Estoque</th>
+            <th>Preço</th>
+            <th>Editar</th>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{TranslateAvailability availability}}</td>
+                <td>{{stock}}</td>
+                <td>{{price}}</td>
+                <td><a href="{{pathFor 'product' _id}}" class="btn btn-info">Editar</a></td>
+            </tr>
+            {{else}}
+             <tr>
+                 <td colspan="5">Nenhum produto cadastrado</td>
+             </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>
+<template name="ProductsNew">
+    <h1>
+        <div class="pull-left">
+            Novo Produto
+        </div>
+        <div class="pull-right">
+            <a href="{{pathFor 'products.index'}}" class="btn btn-default">Voltar</a>
+        </div>
+        <div class="clearfix"></div>
+    </h1>
+    <hr/> 
+    {{#autoForm collection="Products" id="ProductsForm" type="insert"}}
+    {{> afFieldLabel name='name'}}
+    {{> afFieldInput name="name"}}
+    {{> afFieldLabel name='description'}}
+    {{> afFieldInput name="description" rows="6"}}
+    <br/>
+    {{> afObjectField name="measures"}}
+    {{> afFieldLabel name='stock'}}
+    {{> afFieldInput name='stock'}}
+    {{> afFieldLabel name='availability'}}
+    {{> afFieldInput name='availability'}}
+    {{> afFieldLabel name='price'}}
+    {{> afFieldInput name="price"}}
+    <br/>
+    <a class="btn btn-default" href="{{pathFor 'products.index'}}">Voltar</a>
+    <button type="submit" name="submit_form" id="submit_form_product" class="btn btn-success">
+        Salvar Produto
+    </button>
+    {{/autoForm}}
+    <br>
+</template>
 
-				<div class="col-md-9 checkout-boxes-container">
-
-					<div class="panel-group checkout-boxes" id="accordion">
-						
-						<div class="panel panel-default checkout-box">
-							<div class="panel-heading">
-								<h2 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-										01. Create a product
-									</a>
-								</h2>
-							</div>
-							
-							<div id="collapseOne" class="panel-collapse collapse content in">
-								<div class="panel-body">
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-container">
-												<h4 class="title">New Customer</h4>
-												<form role="form" class="cnt-form">
-													<div class="radio">
-														<label>
-															<input type="radio" name="voucher" id="voucher1" value="git" class="radio" checked>
-															Use Git voucher
-														</label>
-													</div>
-													<div class="radio">
-														<label>
-															<input type="radio" name="voucher" id="voucher2" value="estimate" class="radio">
-															Estimate Shipping &amp; Tax
-														</label>
-													</div>
-													<p>By creating an account you will be able to shop faste be up to date on an order's status, and keep track of the orders you have previously made.</p>
-
-													<div class="action">
-														<button class="btn btn-normal btn-blue">CONTINUE</button>
-													</div>	
-												</form>
-											</div>
-										</div><!-- /.col -->
-
-										<div class="col-md-6">
-											<div class="form-container no-margin">
-												<h4 class="title">Returning Customer</h4>
-												<form role="form" class="cnt-form">
-													
-													<div class="form-group">
-														<label for="exampleInputName">Your Name <span class="astk">*</span></label>
-														<input type="text" class="form-control txt" id="exampleInputName" placeholder="">
-													</div>
-
-													<div class="form-group">
-														<label for="exampleInputEmail1">Your Email <span class="astk">*</span></label>
-														<input type="email" class="form-control txt" id="exampleInputEmail1" placeholder="">
-													</div>
-													
-													<a href="#">Forgot your password!</a>
-
-													<div class="action">
-														<button class="btn btn-normal btn-blue">LOGIN</button>
-													</div>	
-												</form>
-											</div>
-										</div><!-- /.col -->
-									</div><!-- /.row -->
-								</div><!-- /.panel-body -->
-							</div><!-- /.panel-collapse -->
-						</div><!-- /.checkout-box -->
-
-						<div class="panel panel-default checkout-box">
-							<div class="panel-heading">
-								<h2 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-										02. billing information
-									</a>
-								</h2><!-- /.panel-title -->
-							</div><!-- /.panel-heading -->
-
-							<div id="collapseTwo" class="panel-collapse collapse content">
-								<div class="panel-body">
-									<div class="form-container">
-										<form role="form" class="cnt-form">
-											<div class="row field-row form-group">
-												<div class="col-xs-12 col-sm-6">
-													<label>Full Name <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-												<div class="col-xs-12 col-sm-6">
-													<label>Last Name <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div class="col-xs-12">
-													<label>Company Name</label>
-													<input class="form-control txt">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div class="col-xs-12 col-sm-6">
-													<label>Address <span class="astk">*</span></label>
-													<input class="form-control txt" data-placeholder="street address">
-												</div>
-												<div class="col-xs-12 col-sm-6">
-													<label>&nbsp;</label>
-													<input class="form-control txt" data-placeholder="town">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div class="col-xs-12 col-sm-4">
-													<label>Postcode / Zip <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-												<div class="col-xs-12 col-sm-4">
-													<label>Email Address <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-
-												<div class="col-xs-12 col-sm-4">
-													<label>Phone Number <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div id="create-account" class="col-xs-12">
-													<input  class="le-checkbox big" type="checkbox"  />
-													<a class="simple-link bold" href="#">Create Account?</a> - you will receive email with temporary generated password after login you need to change it.
-												</div>
-											</div><!-- /.field-row -->	
-										</form><!-- /.form .cnt-form -->
-									</div><!-- /.form-container -->
-								</div><!-- /.panel-body -->
-							</div><!-- /.panel-collapse -->
-						</div><!-- /.checkout-box -->
-
-						<div class="panel panel-default checkout-box">
-							<div class="panel-heading">
-								<h2 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-										03. Shipping Information
-									</a>
-								</h2>
-							</div>
-
-							<div id="collapseThree" class="panel-collapse collapse content">
-								<div class="panel-body">
-									<div class="form-container">
-										<form role="form" class="cnt-form">
-											<div class="row field-row form-group">
-												<div class="col-xs-12 col-sm-6">
-													<label>Full Name <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-												<div class="col-xs-12 col-sm-6">
-													<label>Last Name <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div class="col-xs-12">
-													<label>Company Name</label>
-													<input class="form-control txt">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div class="col-xs-12 col-sm-6">
-													<label>Address <span class="astk">*</span></label>
-													<input class="form-control txt" data-placeholder="street address">
-												</div>
-												<div class="col-xs-12 col-sm-6">
-													<label>&nbsp;</label>
-													<input class="form-control txt" data-placeholder="town">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div class="col-xs-12 col-sm-4">
-													<label>Postcode / Zip <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-												<div class="col-xs-12 col-sm-4">
-													<label>Email Address <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-
-												<div class="col-xs-12 col-sm-4">
-													<label>Phone Number <span class="astk">*</span></label>
-													<input class="form-control txt">
-												</div>
-											</div><!-- /.field-row -->
-
-											<div class="row field-row form-group">
-												<div id="create-account-2" class="col-xs-12">
-													<input  class="le-checkbox big" type="checkbox"  />
-													<a class="simple-link bold" href="#">Create Account?</a> - you will receive email with temporary generated password after login you need to change it.
-												</div>
-											</div><!-- /.field-row -->	
-										</form><!-- /.form .cnt-form -->
-									</div><!-- /.form-container -->
-								</div><!-- /.panel-body -->
-							</div><!-- /panel-collapse-->
-						</div><!-- /.checkout-box -->
-
-						<div class="panel panel-default checkout-box">
-							<div class="panel-heading">
-								<h2 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-										04. shipping method
-									</a>
-								</h2>
-							</div>
-
-							<div id="collapseFour" class="panel-collapse collapse content">
-								<div class="panel-body">
-									<div class="form-container">
-										<form class="form cnt-form">
-											<div class="radio">
-												<label>
-													<input type="radio" name="shipping-method" checked>
-													Normal Delivery<br/>
-													<small>2-5 Days.</small>
-												</label>
-											</div>
-											<div class="radio">
-												<label>
-													<input type="radio" name="shipping-method">
-													Express Delivery<br/>
-													<small>2-5 Days.</small>
-												</label>
-											</div>
-										</form><!-- /.cnt-form -->
-									</div><!-- /.form-container -->
-								</div><!-- /.panel-body -->
-							</div><!-- /panel-collapse-->
-						</div><!-- /.checkout-box -->
-
-						<div class="panel panel-default checkout-box">
-							<div class="panel-heading">
-								<h2 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-										05. payment method
-									</a>
-								</h2>
-							</div>
-
-							<div id="collapseFive" class="panel-collapse collapse content">
-								<div class="panel-body">
-									<div class="form-container">
-										<form role="form" class="cnt-form">
-											<div class="radio">
-												<label>
-													<input type="radio" name="payment" checked>
-													Direct Bank Transfer<br/>
-													<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum tempus elit, vestibulum vestibulum erat ornare id.</small>
-												</label>
-											</div>
-											<div class="radio">
-												<label>
-													<input type="radio" name="payment">
-													Cheque Payment
-												</label>
-											</div>
-											<div class="radio">
-												<label>
-													<input type="radio" name="payment">
-													Cash on Delivery
-												</label>
-											</div>
-											<div class="radio">
-												<label>
-													<input type="radio" name="payment">
-													Pay via Paypal
-												</label>
-											</div>
-										</form>
-									</div><!-- /.form-container -->
-								</div><!-- /.panel-body -->
-							</div><!-- /panel-collapse-->
-						</div><!-- /.checkout-box -->
-
-					</div><!-- /.checkout-boxes -->
-				</div><!-- /.checkout-boxes-container -->
-			</div>
-		</div>
-	</div>
+<template name="ProductsEdit">
+    {{#autoForm collection="Products" doc=ProductDoc id="ProductsForm" type="update"}}
+    <h1>
+        <div class="pull-left">
+            Editando Produto
+        </div>
+        <div class="pull-right">
+            <a href="{{pathFor 'products.index'}}" class="btn btn-default pull-right">Voltar</a>
+            {{#afDeleteButton id="ProductsForm" collection="Products" doc=ProductDoc}}
+            Excluir Produto
+            {{/afDeleteButton}}
+        </div>
+        <div class="clearfix"></div>
+    </h1>
+    <hr/>
+    {{> afFieldLabel name='name'}}
+    {{> afFieldInput name="name"}}
+    {{> afFieldLabel name='description'}}
+    {{> afFieldInput name="description" rows="6"}}
+    <br/>
+    {{> afObjectField name="measures"}}
+    {{> afFieldLabel name='stock'}}
+    {{> afFieldInput name='stock'}}
+    {{> afFieldLabel name='availability'}}
+    {{> afFieldInput name='availability'}}
+    {{> afFieldLabel name='price'}}
+    {{> afFieldInput name="price"}}
+    <br/>
+    <a class="btn btn-default" href="{{pathFor 'products.index'}}">Voltar</a>
+    <input type="submit" name="submit_form" id="submit_form_product" value="Salvar Produto" class="btn btn-success"/>
+    <br/>
+    <br/>
+    {{/autoForm}}
 </template>
